@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from 'src/app/shared/model/cliente/cliente';
-import { ClienteService } from 'src/app/shared/service/cliente.service';
+import { Cliente } from '../shared/model/cliente/cliente';
+import { ClienteService } from '../shared/service/cliente.service';
 
 @Component({
   selector: 'app-home',

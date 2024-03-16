@@ -15,6 +15,7 @@
                           />
                           <div *ngIf="submitted && f.nome.errors" class="invalid-feedback">
                             <div *ngIf="f.nome.errors.required">Nome é obrigatório</div>
+                            <div *ngIf="f.nome.errors.minlength">Informe seu nome incompleto</div>
                           </div>
                         </div>
                     
@@ -28,8 +29,9 @@
                           />
                           <div *ngIf="submitted && f.cpf.errors" class="invalid-feedback">
                             <div *ngIf="f.cpf.errors.required">CPF é obrigatório</div>
-                            <div *ngIf="f.cpf.errors.minlength">CPF inválido</div>
-                            <div *ngIf="f.cpf.errors.maxlength">CPF inválido</div>
+                            <div *ngIf="f.cpf.errors.minlength">CPF incompleto</div>
+                            <div *ngIf="f.cpf.errors.maxlength">CPF com digitos extras</div>
+                            <div *ngIf="f.cpf.errors.cpfNotValid">CPF inválido</div>
                           </div>
                         </div>
                     

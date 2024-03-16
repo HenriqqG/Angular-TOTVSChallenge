@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Cliente } from 'src/app/shared/model/cliente/cliente';
-import { Telefone } from 'src/app/shared/model/telefone/telefone';
-import { ClienteService } from 'src/app/shared/service/cliente.service';
-// import Validation from './utils/validation';
+import { Validator } from '../shared/util/validator';
+import { Cliente } from '../shared/model/cliente/cliente';
+import { Telefone } from '../shared/model/telefone/telefone';
+import { ClienteService } from '../shared/service/cliente.service';
 
 @Component({
   selector: 'app-registro',
@@ -40,8 +40,8 @@ export class RegistroComponent implements OnInit {
       });
     }else{
       this.form = this.formBuilder.group({
-        nome: this.formBuilder.control('', [Validators.required, Validators.minLength(3)]),
-        cpf: this.formBuilder.control('', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
+        nome: this.formBuilder.control('', [Validators.required, Validators.minLength(10)]),
+        cpf: this.formBuilder.control('', [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validator.isValidCpf()]),
         endereco: this.formBuilder.control(''),
         bairro: this.formBuilder.control(''),
         telefone: this.formBuilder.array([this.createItem])
