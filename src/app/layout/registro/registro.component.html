@@ -1,0 +1,71 @@
+<div class="container">
+    <mat-card style="background-color: #31363F; color: #EEEEEE;">
+        <mat-card-title>Cliente</mat-card-title>
+        <mat-card-content  style="text-align: start !important;">
+            <div class="row" style="justify-content: center;">
+                <div class="col-6">
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()"  style="color: #EEEEEE;">
+                        <div class="form-group">
+                          <label>Nome</label>
+                          <input
+                            type="text"
+                            formControlName="nome"
+                            class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.nome.errors }"
+                          />
+                          <div *ngIf="submitted && f.nome.errors" class="invalid-feedback">
+                            <div *ngIf="f.nome.errors.required">Nome é obrigatório</div>
+                          </div>
+                        </div>
+                    
+                        <div class="form-group">
+                          <label>CPF</label>
+                          <input
+                            type="text"
+                            formControlName="cpf"
+                            class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.cpf.errors }"
+                          />
+                          <div *ngIf="submitted && f.cpf.errors" class="invalid-feedback">
+                            <div *ngIf="f.cpf.errors.required">CPF é obrigatório</div>
+                            <div *ngIf="f.cpf.errors.minlength">CPF inválido</div>
+                            <div *ngIf="f.cpf.errors.maxlength">CPF inválido</div>
+                          </div>
+                        </div>
+                    
+                        <div class="form-group">
+                          <label>Endereço</label>
+                          <input
+                            type="text"
+                            formControlName="endereco"
+                            class="form-control"/>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Bairro</label>
+                            <input
+                              type="text"
+                              formControlName="bairro"
+                              class="form-control"/>
+                        </div>
+                        <label>Número de Telefone 
+                            <button type = "button" class="btn no-background" (click)="addTelefone()" >
+                                <i class="material-icons" style="color: #EEEEEE;">add</i>
+                            </button>
+                        </label>
+                        <div formArrayName="telefone">
+                            <div *ngFor="let tel of form.controls.telefone.controls; let i = index" class="mb-2">
+                                <input class="form-control" formControlName="{{i}}" placeholder="99999-9999"/>
+                            </div>
+                          </div>
+
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-cadastrar">Cadastrar</button>
+                          <button type="button" [routerLink]="['/']" class="btn float-right btn-voltar">Voltar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
