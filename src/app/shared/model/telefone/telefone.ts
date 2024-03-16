@@ -1,5 +1,5 @@
 export class Telefone {
     id?: number;
-    numrTelefone?:string;
+    numero?:string;
     idCliente?:number;
 }

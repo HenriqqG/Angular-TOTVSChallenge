@@ -6,5 +6,5 @@ export class Cliente {
     cpf?: string;
     bairro?: string;
     endereco?: string;
-    listaTelefone?: Telefone[];
+    telefones?: Telefone[];
 }

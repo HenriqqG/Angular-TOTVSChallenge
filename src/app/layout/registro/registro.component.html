@@ -48,19 +48,21 @@
                               formControlName="bairro"
                               class="form-control"/>
                         </div>
-                        <label>Número de Telefone 
-                            <button type = "button" class="btn no-background" (click)="addTelefone()" >
-                                <i class="material-icons" style="color: #EEEEEE;">add</i>
-                            </button>
-                        </label>
-                        <div formArrayName="telefone">
-                            <div *ngFor="let tel of form.controls.telefone.controls; let i = index" class="mb-2">
-                                <input class="form-control" formControlName="{{i}}" placeholder="99999-9999"/>
-                            </div>
-                          </div>
+                        <div *ngIf="idCliente == null">
+                            <label>Número de Telefone 
+                                <button type = "button" class="btn no-background" (click)="addTelefone()" >
+                                    <i class="material-icons" style="color: #EEEEEE;">add</i>
+                                </button>
+                            </label>
+                            <div formArrayName="telefone">
+                                <div *ngFor="let tel of form.controls.telefone.controls; let i = index" class="mb-2">
+                                    <input class="form-control" formControlName="{{i}}" placeholder="99999-9999"/>
+                                </div>
+                              </div>
+                        </div>
 
                         <div class="form-group">
-                          <button type="submit" class="btn btn-cadastrar">Cadastrar</button>
+                          <button type="submit" class="btn btn-cadastrar">{{idCliente != null ? 'Atualizar' : 'Cadastrar'}}</button>
                           <button type="button" [routerLink]="['/']" class="btn float-right btn-voltar">Voltar</button>
                         </div>
                     </form>

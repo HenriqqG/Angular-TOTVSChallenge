@@ -20,13 +20,15 @@
                         <td>{{cliente.cpf}}</td>
                         <td>{{cliente.nome}}</td>
                         <td>
-                            <button type="button" class="btn btn-primary" [routerLink]="['/atualizar-registro', cliente.id]">
+                            <button type="button" class="btn btn-primary no-background" [routerLink]="['/atualizar-registro', cliente.id]">
                                 <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" class="btn btn-primary" (click)="marcarRemoverCliente(cliente.id)" *ngIf="!isPresenteListaExcluir(cliente.id)">
+                            <button type="button" class="btn btn-primary no-background" (click)="marcarRemoverCliente(cliente.id)" *ngIf="!isPresenteListaExcluir(cliente.id)">
                                 <i class="material-icons">delete</i>
                             </button>
-                            <button type="button" class="btn btn-primary" label="confirmar" (click)="confirmaRemoverCliente(cliente.id)" *ngIf="isPresenteListaExcluir(cliente.id)"></button>
+                            <button type="button" class="btn btn-primary" label="confirmar" (click)="confirmaRemoverCliente(cliente.id)" *ngIf="isPresenteListaExcluir(cliente.id)">
+                                <i class="material-icons">check</i>
+                            </button>
                         </td>
                     </tr>
                 </tbody>

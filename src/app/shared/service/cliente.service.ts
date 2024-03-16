@@ -15,8 +15,8 @@ export class ClienteService {
     return this.http.get<Cliente[]>(`${environment.apiUrl}/clientes`);
   }
 
-  fetchClienteById(userIdentifier: string):Observable<Cliente[]>{
-    return this.http.get<Cliente[]>(`${environment.apiUrl}/clientes/`+userIdentifier);
+  fetchClienteById(userIdentifier: string):Observable<Cliente>{
+    return this.http.get<Cliente>(`${environment.apiUrl}/clientes/`+userIdentifier);
   }
 
   registerCliente(cliente: Cliente){
