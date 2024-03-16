@@ -20,3 +20,5 @@ Assim como excluir um determinado Cliente ou inserir novos.
 - Digite `ng add @angular/material` para instalar e adicionar dependências básicas utilizadas no projeto
 - Digite `ng s` no terminal para executar a aplicação. 
 - Acesse `http://localhost:4200/`.
+
+> Certifique-se de executar [API - TOTVSChallenge](https://github.com/HenriqqG/API-TOTVSChallenge) primeiro, para que as consultas ao banco sejam realizadas deviadamente!
