@@ -16,6 +16,7 @@ Assim como excluir um determinado Cliente ou inserir novos.
 
 ## Execução do Projeto
 
+- Certifique-se de utilizar a versão compatível do Node.js. Para o desenvolvimento deste, utilizei v14.15.0
 - Digite `npm install -g @angular/cli@12.2.18` para instalar as dependências corretas da versão 12.2.18 do Angular
 - Digite `ng add @angular/material` para instalar e adicionar dependências básicas utilizadas no projeto
 - Digite `ng s` no terminal para executar a aplicação. 
