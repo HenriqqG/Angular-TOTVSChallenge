@@ -50,17 +50,16 @@
                               formControlName="bairro"
                               class="form-control"/>
                         </div>
-                        <div *ngIf="idCliente == null">
-                            <label>Número de Telefone 
-                                <button type = "button" class="btn no-background" (click)="addTelefone()" >
-                                    <i class="material-icons" style="color: #EEEEEE;">add</i>
-                                </button>
-                            </label>
-                            <div formArrayName="telefone">
-                                <div *ngFor="let tel of form.controls.telefone.controls; let i = index" class="mb-2">
-                                    <input class="form-control" formControlName="{{i}}" placeholder="99999-9999"/>
-                                </div>
-                              </div>
+
+                        <label>Número de Telefone 
+                          <button *ngIf="idCliente == null" type = "button" class="btn no-background" (click)="addTelefone()" >
+                            <i class="material-icons" style="color: #EEEEEE;">add</i>
+                          </button>
+                        </label>
+                        <div formArrayName="telefone">
+                          <div *ngFor="let tel of form.controls.telefone.controls; let i = index" class="mb-2">
+                              <input class="form-control" formControlName="{{i}}" placeholder="99999-9999" [readOnly]="idCliente != null"/>
+                          </div>
                         </div>
 
                         <div class="form-group">
